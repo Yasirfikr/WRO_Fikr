@@ -1,0 +1,28 @@
+from spike import PrimeHub, LightMatrix, Button, StatusLight, ForceSensor,
+ MotionSensor, Speaker, ColorSensor, DistanceSensor, Motor, MotorPair
+from spike.control import wait_for_seconds, wait_until, Timer
+from spike.operator import *
+from math import *
+
+hub = PrimeHub() 
+sonar_sensor_left = DistanceSensor('D')
+sonar_sensor_right = DistanceSensor('B')
+distance_left
+timer = Timer()
+motor1 = Motor('E')
+motor2= Motor('C')
+timer.reset()
+set.motor1.speed(-80)
+
+motor2.move(180, 'rotations', steering=0, speed=50)
+
+while timer < 42 : 
+    if sonar_sensor_left - sonar_sensor_right < 0 :
+        set.motor2.speed(50)
+        motor2.move(165, 'rotations', steering=0, speed=50)
+        motor1.speed(-75)
+    elif sonar_sensor_right - sonar_sensor_left > 0 :
+        set.motor2.speed(50)
+        motor2.move(165, 'rotations', steering=0, speed=50)
+        motor1.speed(-75)
+stop.motor1()
